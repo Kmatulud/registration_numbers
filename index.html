@@ -9,27 +9,29 @@
 </head>
 <body>
     <div class="wrapper">
-    <div class="inputField">
+    <div id="inputField">
         <label for="registration">Registration Number:</label>
-        <input type="text" name="registration" id="register">
-    </div>
-    <div class="submitBtn">
+        <input type="text" name="registration" id="register" placeholder="Enter Registration Number e.g CA 2034">
         <button type="submit" id="submit">Add</button>
     </div>
     <div class="theRadios">
         <label for="capetown">Cape Town</label>
-        <input type="radio" name="radio" id="radio" value="capetown">
+        <input type="radio" name="radio" id="radios" value="capetown">
         <label for="bellville">Bellville</label>
-        <input type="radio" name="radio" id="radio" value="bellville">
+        <input type="radio" name="radio" id="radios" value="bellville">
         <label for="paarl">Paarl</label>
-        <input type="radio" name="radio" id="radio" value="paarl">
+        <input type="radio" name="radio" id="radios" value="paarl">
         <label for="showAll">Show All</label>
-        <input type="radio" name="radio" id="radio" value="showAll">
+        <input type="radio" name="radio" id="radios" value="showAll">
     </div>
     <div class="showAllBtn">
         <button type="submit" id="showAll">Show</button>
+        <button type="submit" id="reset">Reset</button>
+
     </div>
+    <div id="regNums"></div>
     </div>
+    <script src="factory.js" charset="utf-8"></script>
     <script src="registration_number.js" charset="utf-8"></script>
 </body>
 </html>
