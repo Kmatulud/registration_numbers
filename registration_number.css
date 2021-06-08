@@ -1,68 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap");
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-body{
-    color: white;
-    font-size: 17px;
-    background-color: lightblue;
-    --color: blue;
+body {
+	color: white;
+	font-size: 17px;
+	background-color: lightblue;
+	--color: blue;
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin-top: 2rem !important;
-    margin: auto;
-    height:90vh;
-    background-color: var(--color);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.9);
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin-top: 2rem !important;
+	margin: auto;
+	height: 90vh;
+	background-color: var(--color);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.9);
 }
-ul{
-    list-style: none;
-    margin-left: 1rem;
+ul {
+	list-style: none;
+	margin-left: 1rem;
 }
-li{
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    text-align: center;
-    background-color: silver;
+li {
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 100%;
+	padding: 0.5rem 1rem;
+	margin-top: 1rem;
+	text-align: center;
+	background-color: silver;
 }
-#inputField{
-    margin: 2rem;
+#inputField {
+	margin: 2rem;
 }
-input[type=text]{
-     width: 80%;
-     padding: 12px 20px;
-     margin: 8px 0;
-     outline: none;
+input[type="text"] {
+	width: 80%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	outline: none;
 }
-button{
-     background-color: #4CAF50;
-     border: none;
-     color: white;
-     padding: 10px 15px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
+button {
+	background-color: #4caf50;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
-input[type=radio]{
-    margin-right: 1rem;
+button:hover {
+	cursor: pointer;
+	background-color: #04ac0a;
 }
-.showAllBtn{
-    padding: 1.5rem;
+input[type="radio"] {
+	margin-right: 1rem;
 }
-#regNums{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
+.showAllBtn {
+	padding: 1.5rem;
+}
+#regNums {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
 }

@@ -21,7 +21,6 @@ function Register(){
 		return regNumsArr;
 	}
  
-
 	function checkTown(list, location) {
 		var filteredData = [];
 		for (var i=0; i<list.length;i++){
@@ -42,8 +41,3 @@ function Register(){
 			checkTown,
 		};
 }
-
-
-
-
-
