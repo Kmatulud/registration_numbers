@@ -25,6 +25,7 @@ body{
 }
 ul{
     list-style: none;
+    margin-left: 1rem;
 }
 li{
     border: 2px solid black;
@@ -61,7 +62,7 @@ input[type=radio]{
     padding: 1.5rem;
 }
 #regNums{
-    width: 15%;
-    margin: auto;
-    height: 40vh;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
 }

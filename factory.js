@@ -1,11 +1,11 @@
-function Registration(){
-    var regNum;
+function Register(){
     var townName;
+	var regNum;
     function setRegNum(reg){
         regNum = reg;
     }
     function getRegNum(){
-        return regNum.toUpperCase().trim();
+        return regNum.toUpperCase();
 	}
     function setTown(town) {
 		townName = town;
@@ -14,38 +14,37 @@ function Registration(){
 	function getTown() {
 		return townName;
 	}
-
-	function checkTown() {
-		if (getTown() === "capetown") {
-			townName.startsWith("CA");
-		}
-		if (getTown() === "bellville") {
-			townName.startsWith("CY");
-		}
-		if (getTown() === "paarl") {
-			townName.startsWith("CJ");
-		}
+	function setArr(theplates){
+		regNumsArr = theplates;
 	}
+	function getArr(){
+		return regNumsArr;
+	}
+ 
+
+	function checkTown(list, location) {
+		var filteredData = [];
+		for (var i=0; i<list.length;i++){
+			if(list[i].startsWith(location)){
+				filteredData.push(location)
+			}
+		}
+		return filteredData;
+	}
+
     return {
-        setRegNum,
-        getRegNum,
-        setTown,
-        getTown,
-        checkTown
-    }
+			setRegNum,
+			getRegNum,
+			setTown,
+			getTown,
+			checkArr,
+			setArr,
+			getArr,
+			checkTown,
+		};
 }
-//  function fromWhere(carReg) {
-// 	switch (carReg) {
-// 		case "CY 189-012":
-// 			return "Bellville";
-// 			break;
-// 		case "CJ 189-123":
-// 			return "Paarl";
-// 			break;
-// 		case "CA 189-235":
-// 			return "Cape Town";
-// 			break;
-// 		default:
-// 			return "Some other place!";
-// 	}
-// }
+
+
+
+
+

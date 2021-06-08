@@ -3,18 +3,30 @@ const input = document.querySelector("#register");
 const buttonElem = document.querySelector("#submit");
 const showAllBtn = document.querySelector("#showAll");
 const resetBtn = document.querySelector("#reset");
+const checkedRadio = document.querySelector("#radios:checked");
 
-const registration = Registration();
 
-buttonElem.addEventListener("click", function(){
+const registration = Register();
+
+function createElem(){
 
     registration.setRegNum(input.value);
+	registration.setTown(checkedRadio.value);
+
+	registration.getTown();
     registration.getRegNum();
 
+	var emptyArr = localStorage.getItem("emptyArr") || [];
+	registration.setArr(emptyArr);
+	registration.getArr();
+
+	localStorage.setItem("emptyArr", registration.checkArr(input.value));
+	localStorage.getItem("emptyArr")
+
     if (registration.getRegNum() != "") {
-		let list = document.createElement("ul");
+		var list = document.createElement("ul");
 		document.getElementById("regNums").appendChild(list);
-		let listItem = document.createElement("li");
+		var listItem = document.createElement("li");
 		listItem.innerHTML = registration.getRegNum();
 		list.appendChild(listItem);
 		input.value = "";
@@ -24,15 +36,14 @@ buttonElem.addEventListener("click", function(){
 		errorMsg.style.color = "orange";
 		document.getElementById("inputField").appendChild(errorMsg);
 	}
+}
+resetBtn.addEventListener("click", function(){
+	localStorage.clear();
 })
-showAllBtn.addEventListener("click", function(){
-	let checkedRadio = document.querySelector("#radios:checked");
-	registration.setTown(checkedRadio.value);
-	registration.getTown();
+buttonElem.addEventListener("click", createElem);
 
-	
-    var emptyArr = JSON.parse(localStorage.getItem("emptyArr")) || [];
 
-	registration.setTownEntered(emptyArr);
-	registration.getTownEntered();
-})
+
+
+
+
