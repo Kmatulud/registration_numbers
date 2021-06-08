@@ -15,7 +15,7 @@ function createElem() {
 	registration.getRegNum();
 
 	if (registration.getRegNum() != "") {
-		if (!registration.getRegNum().match(/^[A-Z]{2}\s[0-9]{4}$/) && !input.value.startsWith('ca') || !input.value.startsWith('cy') || !input.value.startsWith('cj')){
+		if (!registration.getRegNum().match(/^[A-Z]{2}\s[0-9]{4}$/)){
 			errorMsg = document.createElement("p");
 			errorMsg.innerHTML = "Invalid registration!";
 			errorMsg.style.color = "orange";
