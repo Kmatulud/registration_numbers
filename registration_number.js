@@ -20,8 +20,6 @@ function createElem(){
 	registration.setArr(emptyArr);
 	registration.getArr();
 
-	localStorage.setItem("emptyArr", registration.checkArr(input.value));
-	localStorage.getItem("emptyArr")
 
     if (registration.getRegNum() != "") {
 		var list = document.createElement("ul");

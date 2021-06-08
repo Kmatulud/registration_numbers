@@ -37,7 +37,6 @@ function Register(){
 			getRegNum,
 			setTown,
 			getTown,
-			checkArr,
 			setArr,
 			getArr,
 			checkTown,
