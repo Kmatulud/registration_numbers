@@ -1,36 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="registration_number.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Numbers</title>
+    <link rel="stylesheet" href="registration_number.css" />
+  </head>
+  <body id="body">
     <div class="wrapper">
-    <div id="inputField">
-        <label for="registration">Registration Number:</label>
-        <input type="text" name="registration" id="register" placeholder="Enter Registration Number e.g CA 2034">
-        <button type="submit" id="submit">Add</button>
+      <h2>Registration Numbers</h2>
+
+      <div class="input">
+        <input
+          type="text"
+          name="reg"
+          id="reg"
+          placeholder="Please type a Registration Number e.g CA 20554"
+        />
+        <input type="submit" id="add" value="Add Registration" />
+        <input type="submit" id="reset" value="Reset" />
+      </div>
+
+      <div id="myBtnContainer">
+        <label for="all" class="btnHolder"
+          >Show all
+          <input
+            type="radio"
+            name="radio"
+            class="btn active"
+            id="all"
+            checked
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label for="capeTown" class="btnHolder"
+          >Cape Town
+          <input
+            type="radio"
+            name="radio"
+            class="btn"
+            id="capeTown"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label for="belville" class="btnHolder"
+          >Belville
+          <input
+            type="radio"
+            name="radio"
+            class="btn"
+            id="belville"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <label for="paarl" class="btnHolder"
+          >Paarl
+          <input
+            type="radio"
+            name="radio"
+            class="btn"
+            id="paarl"
+            onclick="filterSelection('paarl')"
+          />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="output">
+        <ul class="container"></ul>
+      </div>
     </div>
-    <div class="theRadios">
-        <label for="capetown" >Cape Town</label>
-        <input type="radio" name="radio" id="radios" value="capetown" checked>
-        <label for="bellville">Bellville</label>
-        <input type="radio" name="radio" id="radios" value="bellville">
-        <label for="paarl">Paarl</label>
-        <input type="radio" name="radio" id="radios" value="paarl">
-        <label for="showAll">Show All</label>
-        <input type="radio" name="radio" id="radios" value="show all">
-    </div>
-    <div class="showAllBtn">
-        <button type="submit" id="showAll">Show</button>
-        <button type="submit" id="reset">Reset</button>
-    </div>
-    <div id="regNums"></div>
-    </div>
+    <footer>
+      <p>Kgotso Matuludi &copy; 2021</p>
+    </footer>
     <script src="factory.js" charset="utf-8"></script>
     <script src="registration_number.js" charset="utf-8"></script>
-</body>
+  </body>
 </html>

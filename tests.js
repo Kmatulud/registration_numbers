@@ -1,15 +1,15 @@
 describe("The Registration Project", function(){
-    let register = Register();
+    const register = Register();
 
     it("should return an inputted registration number from a user irrespective of cases used", function(){
         register.setRegNum("CA 1203");
-        assert.equal("CA 1203", register.getRegNum());
+        assert.deepEqual("CA 1203", register.getRegNum());
 
         register.setRegNum("cj 0973");
-        assert.equal("CJ 0973", register.getRegNum());
+        assert.deepEqual("CJ 0973", register.getRegNum());
 
         register.setRegNum("cy 7845");
-        assert.equal("CY 7845", register.getRegNum());
+        assert.deepEqual("CY 7845", register.getRegNum());
     })
     it("should return the value of the radio buttons selected just as it is written", function(){
         register.setTown("cape town");

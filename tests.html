@@ -14,13 +14,14 @@
 
     <script class="mocha-init">
       mocha.setup('bdd');
-      mocha.checkLeaks();
+      mocha.setup({ ignoreLeaks: true });
+
       var assert = chai.assert;
     </script>
-    <script src="factory.js"></script>
-    <script src="tests.js"></script>
     <script class="mocha-exec">
       mocha.run();
     </script>
+    <script src="factory.js"></script>
+    <script src="tests.js"></script>
   </body>
 </html>

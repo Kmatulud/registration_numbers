@@ -1,43 +1,60 @@
-function Register(){
-    var townName;
+function Register() {
 	var regNum;
-    function setRegNum(reg){
-        regNum = reg;
-    }
-    function getRegNum(){
-        return regNum.toUpperCase();
+	var regNumsArr = [];
+	function setRegNum(reg) {
+		regNum = reg;
 	}
-    function setTown(town) {
-		townName = town;
+	function getRegNum() {
+		return regNum.toUpperCase().trim();
 	}
-
-	function getTown() {
-		return townName;
+	function setArr(regNum) {
+		regNumsArr = regNum;
 	}
-	function setArr(theplates){
-		regNumsArr = theplates;
-	}
-	function getArr(){
+	function getArr() {
 		return regNumsArr;
 	}
- 
-	function checkTown(list, location) {
-		var filteredData = [];
-		for (var i=0; i<list.length;i++){
-			if(list[i].startsWith(location)){
-				filteredData.push(location)
-			}
-		}
-		return filteredData;
+	
+filterSelection("all");
+function filterSelection(c) {
+	var x, i;
+	x = document.getElementsByClassName("filterDiv");
+	if (c == "all") c = "";
+	for (i = 0; i < x.length; i++) {
+		removeShowClass(x[i], "show");
+		if (x[i].className.indexOf(c) > -1) addShowClass(x[i], "show");
 	}
+}
 
-    return {
-			setRegNum,
-			getRegNum,
-			setTown,
-			getTown,
-			setArr,
-			getArr,
-			checkTown,
-		};
+function addShowClass(element, name) {
+	var i, arr1, arr2;
+	arr1 = element.className.split(" ");
+	arr2 = name.split(" ");
+	for (i = 0; i < arr2.length; i++) {
+		if (arr1.indexOf(arr2[i]) == -1) {
+			element.className += " " + arr2[i];
+		}
+	}
+}
+
+function removeShowClass(element, name) {
+	var i, arr1, arr2;
+	arr1 = element.className.split(" ");
+	arr2 = name.split(" ");
+	for (i = 0; i < arr2.length; i++) {
+		while (arr1.indexOf(arr2[i]) > -1) {
+			arr1.splice(arr1.indexOf(arr2[i]), 1);
+		}
+	}
+	element.className = arr1.join(" ");
+}
+	
+	return {
+		setRegNum,
+		getRegNum,
+		setArr,
+		getArr,
+		filterSelection,
+		addShowClass,
+		removeShowClass,
+	};
 }

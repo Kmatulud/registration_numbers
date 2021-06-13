@@ -1,72 +1,193 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap");
-
-* {
-	font-family: "Poppins", sans-serif;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-body {
-	color: white;
-	font-size: 17px;
-	background-color: lightblue;
-	--color: blue;
+body{
+    font-family: 'Poppins', sans-serif;
 }
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 50%;
-	margin-top: 2rem !important;
-	margin: auto;
-	height: 90vh;
-	background-color: var(--color);
-	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.9);
+.wrapper{
+    background-color: rgb(9, 67, 148);
+    height: 100vh;
+    width: 70%;
+    margin: auto;
+    padding: 2rem 4rem 0rem 4rem;
 }
-ul {
-	list-style: none;
-	margin-left: 1rem;
+h2{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
 }
 li {
+    float: left;
+    background-color: grey;
+    color: #ffffff;
+    width: 100px;
+    line-height: 60px;
+    text-align: center;
+    margin: 4px;
+    display: none;
 	border: 2px solid black;
-	border-radius: 5px;
-	width: 100%;
-	padding: 0.5rem 1rem;
-	margin-top: 1rem;
-	text-align: center;
-	background-color: silver;
-}
-#inputField {
-	margin: 2rem;
-}
-input[type="text"] {
-	width: 80%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	outline: none;
-}
-button {
-	background-color: #4caf50;
-	border: none;
-	color: white;
-	padding: 10px 15px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-}
-button:hover {
-	cursor: pointer;
-	background-color: #04ac0a;
-}
-input[type="radio"] {
-	margin-right: 1rem;
-}
-.showAllBtn {
-	padding: 1.5rem;
-}
-#regNums {
-	width: 80%;
-	display: flex;
-	flex-wrap: wrap;
-}
+	border-radius: 15px;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  ul {
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  #myBtnContainer{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    justify-content: space-evenly;
+  }
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #2196F3
+    ;
+    color: white;
+  }
+  .input{
+      margin-bottom: 2rem;
+      width: 50%;
+      margin: 2rem auto;
+  }
+  .input p{
+    display: block;
+  }
+  label{
+      color: white;
+      margin-right: .5rem;
+      font-size: 1.2rem;
+  }
+  input[type="text"]{
+      font-size: 1.1rem;
+      padding: .7rem 1.2rem;
+      width: 100%;
+      outline: none;
+  }
+  input[type="submit"]{
+    align-items: center;
+      margin-right: 1rem;
+      margin-top: .5rem;
+      margin-bottom: 1rem;
+      padding: .5rem 1rem;
+      background-color: #2196F3;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 300ms ease;
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+  }
+  ::placeholder{
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+  }
+  input[type="submit"]:hover{
+    background-color: #228adf;
+  }
+  footer{
+      height: 7vh;
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background-color: #2196F3;
+      width: 100%;
+  }
+  footer  p{
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  /* Customize the label (the container) */
+.btnHolder {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .btnHolder input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .btnHolder:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .btnHolder input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .btnHolder input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .btnHolder .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
