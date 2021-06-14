@@ -14,13 +14,18 @@
 
     <script class="mocha-init">
       mocha.setup('bdd');
-      mocha.setup({ ignoreLeaks: true });
-
+      mocha.checkLeaks();
+      mocha.setup({
+        globals: ['*']
+      });
       var assert = chai.assert;
     </script>
     <script class="mocha-exec">
       mocha.run();
+      // mocha.run().globals(['errorText']);
     </script>
+    
+    
     <script src="factory.js"></script>
     <script src="tests.js"></script>
   </body>
